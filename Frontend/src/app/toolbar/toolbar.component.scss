@@ -1,6 +1,8 @@
-$primary-color : #05386B;
-$secondary-color : #5CDB95;
+$primary-color : #1f2833;
+$secondary-color : #66f6f1;
 $text-color: #EDF5e1;
+$text-secondary-color: #0b0c10;
+
 
 .toolbar {
     background-color: $primary-color;
@@ -19,6 +21,7 @@ $text-color: #EDF5e1;
 
 button:hover {
     background-color: $secondary-color;
+    color: $text-secondary-color;
 }
 
 .menu-toolbar {
