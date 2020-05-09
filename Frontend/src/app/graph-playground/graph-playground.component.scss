@@ -8,7 +8,8 @@
 //   clip-path: polygon(0 0, 90vw 0, 90vw 90vw, 0 90vw);
 // }
 
-.item {
+.cell {
+  content: "" !important;
   margin: 0 !important;
   width: 25px;
   height: 25px;
@@ -16,7 +17,11 @@
   display: inline-block;
 }
 
-.item:hover {
+.change-color {
+  background-color: red;
+}
+
+.cell:hover {
   background-color: pink;
 }
 

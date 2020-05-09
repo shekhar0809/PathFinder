@@ -10,9 +10,9 @@ export interface node {
 }
 
 export const data = [];
-for (let row = 0; row < 50; row++) {
+for (let row = 0; row < 20; row++) {
   const currentRow = [];
-  for (let col = 0; col < 20; col++) {
+  for (let col = 0; col < 50; col++) {
     let temp: node = {
       row: row,
       col: col,

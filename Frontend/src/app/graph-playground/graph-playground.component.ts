@@ -10,9 +10,12 @@ export class GraphPlaygroundComponent implements OnInit {
   data = data;
   constructor() {}
 
-  saveRowCol(i, j) {
-    const coordinates = [i, j];
+  saveRowCol(e) {
+    const coordinates = [e.row, e.col];
     console.log(coordinates);
+    let id = 'Node' + e.row + e.col;
+    console.log(id);
+    document.getElementById(id.toString()).classList.toggle('change-color');
   }
 
   ngOnInit() {}

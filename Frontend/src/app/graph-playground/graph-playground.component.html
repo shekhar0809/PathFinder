@@ -3,11 +3,12 @@
     <!-- <div class="clip-size"> -->
     <div class="row" *ngFor="let row of data; let i = index">
       <div
-        class="item"
-        (click)="saveRowCol(i, j)"
-        *ngFor="let item of data; let j = index"
+        class="cell"
+        id="Node{{ i }}{{ j }}"
+        (click)="saveRowCol(item)"
+        *ngFor="let item of row; let j = index"
       >
-        {{ item[i][j] }}
+        {{ item[i] }}
       </div>
     </div>
     <!-- </div> -->
