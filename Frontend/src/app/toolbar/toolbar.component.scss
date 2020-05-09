@@ -1,5 +1,10 @@
-.width-menu {
-    width: 120px;
+$primary-color : #05386B;
+$secondary-color : #5CDB95;
+$text-color: #EDF5e1;
+
+.toolbar {
+    background-color: $primary-color;
+    color: $text-color;
 }
 
 .righty {
@@ -9,5 +14,13 @@
 }
 
 .btn-toolbar {
+    margin-left: 20px;
+}
+
+button:hover {
+    background-color: $secondary-color;
+}
+
+.menu-toolbar {
     margin-left: 20px;
 }
