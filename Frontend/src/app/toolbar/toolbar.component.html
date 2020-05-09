@@ -1,1 +1,33 @@
-<p>toolbar works!</p>
+<mat-toolbar>
+    <div class="title-toolbar">
+        PathFinder
+    </div>
+
+    <div class="righty">
+
+        <button class="width-menu" mat-button [matMenuTriggerFor]="menu1">Algorithm</button>
+        <mat-menu class="width-menu" #menu1="matMenu">
+            <button class="width-menu" mat-menu-item>Item 1</button>
+            <button class="width-menu" mat-menu-item>Item 2</button>
+        </mat-menu>
+
+        <button class="width-menu" mat-button [matMenuTriggerFor]="menu2">Mazes & Patterns</button>
+        <mat-menu class="width-menu" #menu2="matMenu">
+            <button class="width-menu" mat-menu-item>Item 1</button>
+            <button class="width-menu" mat-menu-item>Item 2</button>
+        </mat-menu>
+
+        <button class="btn-toolbar" mat-button>Add Bomb </button>
+        <button class="btn-toolbar" mat-button>Visualize Algorithm</button>
+        <button class="btn-toolbar" mat-button>Clear Board</button>
+        <button class="btn-toolbar" mat-button>Clear Walls & Weights</button>
+        <button class="btn-toolbar" mat-button>Clear Path</button>
+
+        <button class="width-menu" mat-button [matMenuTriggerFor]="menu3">Speed</button>
+        <mat-menu class="width-menu" #menu3="matMenu">
+            <button class="width-menu" mat-menu-item>Item 1</button>
+            <button class="width-menu" mat-menu-item>Item 2</button>
+        </mat-menu>
+
+    </div>
+</mat-toolbar>
