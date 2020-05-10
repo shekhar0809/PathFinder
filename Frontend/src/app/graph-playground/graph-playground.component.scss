@@ -1,10 +1,37 @@
-.container{
-  margin: 0 0 0;
+.container {
+  width: fit-content;
+  position: relative;
+  margin: auto;
 }
 
-.item{
+// .clip-size {
+//   clip-path: polygon(0 0, 90vw 0, 90vw 90vw, 0 90vw);
+// }
+
+.cell {
+  content: "" !important;
+  margin: 0 !important;
   width: 25px;
   height: 25px;
-  outline: 1px solid;
+  outline: 1px solid #aaa;
   display: inline-block;
+}
+
+.change-color {
+  background-color: red;
+}
+
+.cell:hover {
+  background-color: pink;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.wrapper {
+  width: 100%;
+  margin-top: 10px;
 }

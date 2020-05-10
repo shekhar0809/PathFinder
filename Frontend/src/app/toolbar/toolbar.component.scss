@@ -1,0 +1,29 @@
+$primary-color : #1f2833;
+$secondary-color : #66f6f1;
+$text-color: #EDF5e1;
+$text-secondary-color: #0b0c10;
+
+
+.toolbar {
+    background-color: $primary-color;
+    color: $text-color;
+}
+
+.righty {
+    display: inline-block;
+    right: 20px;
+    margin-left: auto;
+}
+
+.btn-toolbar {
+    margin-left: 20px;
+}
+
+button:hover {
+    background-color: $secondary-color;
+    color: $text-secondary-color;
+}
+
+.menu-toolbar {
+    margin-left: 20px;
+}
