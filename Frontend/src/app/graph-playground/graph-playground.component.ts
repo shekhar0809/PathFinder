@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import { data } from '../mockGrid';
+import { grid } from '../mockGrid';
 @Component({
   selector: 'app-graph-playground',
   templateUrl: './graph-playground.component.html',
   styleUrls: ['./graph-playground.component.scss'],
 })
 export class GraphPlaygroundComponent implements OnInit {
-  data = data;
+  grid = grid;
   constructor() {}
 
   saveRowCol(e) {

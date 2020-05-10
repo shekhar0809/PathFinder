@@ -9,24 +9,24 @@ export interface node {
   isBlocked: boolean;
 }
 
-export const data = [];
+export const grid = [];
 for (let row = 0; row < 20; row++) {
   const currentRow = [];
   for (let col = 0; col < 50; col++) {
-    let temp: node = {
-      row: row,
-      col: col,
-      isVisited: false,
-      isStart: false,
-      isEnd: false,
-      isPath: false,
-      isWeighted: false,
-      isBlocked: false,
-    };
-    currentRow.push(temp);
-    // continue;
+    currentRow.push(createNode(col,row));
   }
-  data.push(currentRow);
+  grid.push(currentRow);
+}
+const createNode=(col,row)=>{
+  return{
+    col,
+    row,
+    isStart: row === START_NODE_ROW && col === START_NODE_COL,
+    isFinish: row === FINISH_NODE_ROW && col === FINISH_NODE_COL,
+    distance: Infinity,
+    isVisited: false,
+    previousNode: null,
+  }
 }
 
 export interface node {}
