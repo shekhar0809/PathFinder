@@ -1,14 +1,14 @@
 <div class="wrapper">
   <div class="container">
     <!-- <div class="clip-size"> -->
-    <div class="row" *ngFor="let row of grid; let i = index">
+    <div class="row" *ngFor="let row of data; let i = index">
       <div
         class="cell"
         id="Node{{ i }}{{ j }}"
         (click)="saveRowCol(item)"
         *ngFor="let item of row; let j = index"
       >
-        {{ item[i]}}
+        {{ item[i] }}
       </div>
     </div>
     <!-- </div> -->
