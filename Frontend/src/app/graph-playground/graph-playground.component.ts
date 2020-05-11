@@ -12,12 +12,15 @@ export class GraphPlaygroundComponent implements OnInit {
 
   constructor(private getNode: NodeServiceService) {}
 
-  saveRowCol(e: KeyboardEvent, node: node) {
-    const id = this.getNode.GetNode(node);
+  saveRowCol(e: MouseEvent, node: node) {
+    this.getNode.GetNode(node);
 
-    if (e.key === 's') {
-      document.getElementById(id.toString());
-      this.mynode.isStart === true;
+    if (e.ctrlKey === true) {
+      this.getNode.start(node);
+    }
+
+    if (e.shiftKey === true) {
+      this.getNode.end(node);
     }
   }
 

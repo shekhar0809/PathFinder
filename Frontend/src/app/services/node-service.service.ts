@@ -14,6 +14,13 @@ export class NodeServiceService {
     let id = 'Node' + e.row + e.col;
     console.log(id);
     document.getElementById(id.toString()).classList.toggle('change-color');
-    return id;
+  }
+
+  start(e: node) {
+    e.isStart ? (e.isStart = false) : (e.isStart = true);
+  }
+
+  end(e: node) {
+    e.isEnd ? (e.isEnd = false) : (e.isEnd = true);
   }
 }
