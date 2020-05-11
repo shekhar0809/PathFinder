@@ -5,7 +5,7 @@
       <div
         class="cell"
         id="Node{{ i }}{{ j }}"
-        (click)="saveRowCol(item)"
+        (click)="saveRowCol($event, item)"
         *ngFor="let item of row; let j = index"
       >
         {{ item[i] }}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { data } from '../mockGrid';
+import { data, node } from '../mockGrid';
+import { NodeServiceService } from '../services/node-service.service';
 @Component({
   selector: 'app-graph-playground',
   templateUrl: './graph-playground.component.html',
@@ -8,14 +9,16 @@ import { data } from '../mockGrid';
 })
 export class GraphPlaygroundComponent implements OnInit {
   data = data;
-  constructor() {}
 
-  saveRowCol(e) {
-    const coordinates = [e.row, e.col];
-    console.log(coordinates);
-    let id = 'Node' + e.row + e.col;
-    console.log(id);
-    document.getElementById(id.toString()).classList.toggle('change-color');
+  constructor(private getNode: NodeServiceService) {}
+
+  saveRowCol(e: KeyboardEvent, node: node) {
+    const id = this.getNode.GetNode(node);
+
+    if (e.key === 's') {
+      document.getElementById(id.toString());
+      this.mynode.isStart === true;
+    }
   }
 
   ngOnInit() {}
