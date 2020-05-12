@@ -15,7 +15,7 @@ export class NodeServiceService {
     console.log(e);
     const coordinates = [e.row, e.col];
     console.log(coordinates);
-    let id = 'Node' + e.row + e.col;
+    let id = 'Node-r' + e.row + '-c' + e.col;
     console.log(id);
     document.getElementById(id.toString()).classList.toggle('change-color');
   }
