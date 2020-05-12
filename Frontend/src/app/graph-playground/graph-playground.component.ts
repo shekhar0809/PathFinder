@@ -8,9 +8,9 @@ import { NodeServiceService } from '../services/node-service.service';
   styleUrls: ['./graph-playground.component.scss'],
 })
 export class GraphPlaygroundComponent implements OnInit {
-  data = data;
-
   constructor(private getNode: NodeServiceService) {}
+
+  data = this.getNode.getGrid();
 
   saveRowCol(e: MouseEvent, node: node) {
     this.getNode.GetNode(node);

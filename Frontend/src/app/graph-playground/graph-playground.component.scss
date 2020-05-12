@@ -18,7 +18,7 @@
 }
 
 .change-color {
-  background-color: red;
+  background-color: red !important ;
 }
 
 .cell:hover {
@@ -34,4 +34,8 @@
 .wrapper {
   width: 100%;
   margin-top: 10px;
+}
+
+.visited {
+  background-color: blue;
 }

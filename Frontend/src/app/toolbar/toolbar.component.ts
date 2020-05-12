@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { NodeServiceService } from '../services/node-service.service';
+import { dijkstra } from 'src/assets/Algorithms/dijkstra';
 
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss']
+  styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit {
+  constructor(private nodeService: NodeServiceService) {}
 
-  constructor() { }
+  runAlgorithm() {
+    const grid = this.nodeService.getGrid();
+    const startNode = this.nodeService.getStartNode();
+    const endNode = this.nodeService.getEndNode();
 
-  ngOnInit(): void {
+    dijkstra(grid, startNode, endNode);
   }
 
+  ngOnInit(): void {}
 }

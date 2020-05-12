@@ -6,6 +6,7 @@
         class="cell"
         id="Node{{ i }}{{ j }}"
         (click)="saveRowCol($event, item)"
+        [ngClass]="{ visited: item.isVisited === true }"
         *ngFor="let item of row; let j = index"
       >
         {{ item[i] }}
