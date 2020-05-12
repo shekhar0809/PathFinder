@@ -1,6 +1,16 @@
 import { node } from 'src/app/mockGrid';
 
 export function dijkstra(data, startNode, endNode) {
+  if (!startNode) {
+    alert('you need to have a start Node');
+    return -1;
+  }
+
+  if (!endNode) {
+    alert('you need to have a end Node');
+    return -1;
+  }
+
   const visitedNodesInOrder = [];
   startNode.distance = 0;
   const unvisitedNodes = getAllNodes(data);
