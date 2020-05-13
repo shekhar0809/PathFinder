@@ -7,41 +7,33 @@ import { node, data } from '../mockGrid';
 export class NodeServiceService {
   constructor() {}
 
-  startNode: node[] = [];
-  endNode: node[] = [];
-  grid = data;
+  startNode: node = undefined;
+  endNode: node = undefined;
+  grid: node[] = data;
 
   GetNode(e: node) {
     console.log(e);
     const coordinates = [e.row, e.col];
     console.log(coordinates);
-    let id = 'Node-r' + e.row + '-c' + e.col;
+    let id = `Node-r${e.row}-c${e.col}`;
     console.log(id);
     document.getElementById(id.toString()).classList.toggle('change-color');
   }
 
   start(e: node) {
-    for (let i = 0; i < this.startNode.length; i++) {
-      let item = this.startNode[i];
-      item.isStart = false;
-    }
-    e.isStart ? (e.isStart = false) : (e.isStart = true);
+    if (this.startNode) this.startNode.isStart = false;
 
-    if (e.isStart === true) {
-      this.startNode.push(e);
-    }
+    e.isStart = true;
+    this.startNode = e;
+    this.newGrid();
   }
 
   end(e: node) {
-    for (let i = 0; i < this.endNode.length; i++) {
-      let item = this.endNode[i];
-      item.isEnd = false;
-    }
-    e.isEnd ? (e.isEnd = false) : (e.isEnd = true);
+    if (this.endNode) this.endNode.isEnd = false;
 
-    if (e.isEnd === true) {
-      this.endNode.push(e);
-    }
+    e.isEnd = true;
+    this.endNode = e;
+    this.newGrid();
   }
 
   getGrid() {
@@ -49,14 +41,40 @@ export class NodeServiceService {
   }
 
   getStartNode() {
-    return this.startNode[0] ? this.startNode[0] : undefined;
+    return this.startNode;
   }
 
   getEndNode() {
-    return this.endNode[0] ? this.endNode[0] : undefined;
+    return this.endNode;
   }
 
   getNodeID(e: node) {
-    return 'Node' + e.row + e.col;
+    return `Node-r${e.row}-c${e.col}`;
+  }
+
+  newGrid() {
+    const grid = this.grid;
+    for (let row of grid) {
+      for (let node of row) {
+        node.isPath = false;
+        node.isVisited = false;
+        node.distance = Infinity;
+      }
+    }
+  }
+
+  resetGrid() {
+    const grid = this.grid;
+    for (let row of grid) {
+      for (let node of row) {
+        node.isVisited = false;
+        node.isStart = false;
+        node.isEnd = false;
+        node.isPath = false;
+        node.isWeighted = false;
+        node.isBlocked = false;
+        node.distance = Infinity;
+      }
+    }
   }
 }

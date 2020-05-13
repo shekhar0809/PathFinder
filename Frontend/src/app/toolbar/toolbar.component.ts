@@ -8,14 +8,21 @@ import { dijkstra } from 'src/assets/Algorithms/dijkstra';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit {
+
   constructor(private nodeService: NodeServiceService) {}
 
   runAlgorithm() {
     const grid = this.nodeService.getGrid();
     const startNode = this.nodeService.getStartNode();
     const endNode = this.nodeService.getEndNode();
-
+    console.log(startNode);
+      console.log(endNode);
     dijkstra(grid, startNode, endNode);
+  }
+
+  
+  clearBoard() {
+    this.nodeService.resetGrid();
   }
 
   ngOnInit(): void {}
