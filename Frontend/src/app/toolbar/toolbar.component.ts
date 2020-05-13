@@ -15,6 +15,9 @@ export class ToolbarComponent implements OnInit {
     const startNode = this.nodeService.getStartNode();
     const endNode = this.nodeService.getEndNode();
 
+    console.log(startNode);
+    console.log(endNode);
+
     dijkstra(grid, startNode, endNode);
   }
 
