@@ -27,7 +27,9 @@
     </mat-menu>
 
     <button class="btn-toolbar" mat-button>Add Bomb</button>
-    <button class="btn-toolbar" mat-button>Visualize Algorithm</button>
+    <button class="btn-toolbar" (click)="runAlgorithm()" mat-button>
+      Visualize Algorithm
+    </button>
     <button class="btn-toolbar" mat-button>Clear Board</button>
     <button class="btn-toolbar" mat-button>Clear Walls & Weights</button>
     <button class="btn-toolbar" mat-button>Clear Path</button>

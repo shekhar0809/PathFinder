@@ -4,8 +4,9 @@
     <div class="row" *ngFor="let row of data; let i = index">
       <div
         class="cell"
-        id="Node{{ i }}{{ j }}"
+        id="Node-r{{ i }}-c{{ j }}"
         (click)="saveRowCol($event, item)"
+        [ngClass]="{ visited: item.isVisited === true }"
         *ngFor="let item of row; let j = index"
       >
         {{ item[i] }}

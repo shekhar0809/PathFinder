@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { node } from '../mockGrid';
+import { node, data } from '../mockGrid';
 
 @Injectable({
   providedIn: 'root',
@@ -9,12 +9,13 @@ export class NodeServiceService {
 
   startNode: node[] = [];
   endNode: node[] = [];
+  grid = data;
 
   GetNode(e: node) {
     console.log(e);
     const coordinates = [e.row, e.col];
     console.log(coordinates);
-    let id = 'Node' + e.row + e.col;
+    let id = 'Node-r' + e.row + '-c' + e.col;
     console.log(id);
     document.getElementById(id.toString()).classList.toggle('change-color');
   }
@@ -41,5 +42,21 @@ export class NodeServiceService {
     if (e.isEnd === true) {
       this.endNode.push(e);
     }
+  }
+
+  getGrid() {
+    return this.grid;
+  }
+
+  getStartNode() {
+    return this.startNode[0] ? this.startNode[0] : undefined;
+  }
+
+  getEndNode() {
+    return this.endNode[0] ? this.endNode[0] : undefined;
+  }
+
+  getNodeID(e: node) {
+    return 'Node' + e.row + e.col;
   }
 }

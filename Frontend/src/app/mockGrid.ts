@@ -7,6 +7,7 @@ export interface node {
   isPath: boolean;
   isWeighted: boolean;
   isBlocked: boolean;
+  distance: number;
 }
 
 export const data = [];
@@ -22,6 +23,7 @@ for (let row = 0; row < 20; row++) {
       isPath: false,
       isWeighted: false,
       isBlocked: false,
+      distance: Infinity,
     };
     currentRow.push(temp);
     // continue;
