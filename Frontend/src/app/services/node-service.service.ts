@@ -62,4 +62,19 @@ export class NodeServiceService {
       }
     }
   }
+
+  resetGrid() {
+    const grid = this.grid;
+    for (let row of grid) {
+      for (let node of row) {
+        node.isVisited = false;
+        node.isStart = false;
+        node.isEnd = false;
+        node.isPath = false;
+        node.isWeighted = false;
+        node.isBlocked = false;
+        node.distance = Infinity;
+      }
+    }
+  }
 }

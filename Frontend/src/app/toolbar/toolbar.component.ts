@@ -21,5 +21,9 @@ export class ToolbarComponent implements OnInit {
     dijkstra(grid, startNode, endNode);
   }
 
+  clearBoard() {
+    this.nodeService.resetGrid();
+  }
+
   ngOnInit(): void {}
 }
