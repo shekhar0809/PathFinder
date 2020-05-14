@@ -20,8 +20,6 @@ export class ToolbarComponent implements OnInit {
       console.log(endNode);
     dda(grid, startNode, endNode);
   }
-
-
   clearBoard() {
     this.nodeService.resetGrid();
   }

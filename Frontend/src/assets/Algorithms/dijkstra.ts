@@ -34,7 +34,6 @@ function animateDijkstra(visitedNodesInOrder: node[]) {
     setTimeout(() => {
       const node = visitedNodesInOrder[i];
       node.isVisited = true;
-      console.log(node);
     }, 1 * i);
   }
 }
