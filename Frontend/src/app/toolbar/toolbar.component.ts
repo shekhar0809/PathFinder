@@ -5,6 +5,7 @@ import { dijkstra } from 'src/assets/Algorithms/dijkstra';
 import { dda } from 'src/assets/Algorithms/dda';
 import { bfs } from 'src/assets/Algorithms/bfs';
 import { AlgorithmSupplierService } from '../services/algorithm-supplier.service';
+import { a_star } from 'src/assets/Algorithms/A_star';
 
 @Component({
   selector: 'app-toolbar',
@@ -33,6 +34,8 @@ export class ToolbarComponent implements OnInit {
       dijkstra(grid, startNode, endNode);
     } else if (algorithmID === 3) {
       dda(grid, startNode, endNode);
+    } else if (algorithmID === 4) {
+      a_star(grid, startNode, endNode);
     } else {
       alert('You need to select an Algorithm first!');
     }
@@ -51,6 +54,11 @@ export class ToolbarComponent implements OnInit {
   selectDDA() {
     this.Algorithm = 'DDA Line Tracing Algorithm';
     this.algorithmService.selectDDA();
+  }
+
+  selectAstar() {
+    this.Algorithm = 'A* Algorithm';
+    this.algorithmService.selectAstar();
   }
 
   clearBoard() {

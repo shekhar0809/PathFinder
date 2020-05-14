@@ -24,6 +24,11 @@ export class AlgorithmSupplierService {
     this.nodeService.clearGrid();
   }
 
+  selectAstar() {
+    this.currentAlgorithm = 4;
+    this.nodeService.clearGrid();
+  }
+
   getAlgorithm(): number {
     this.nodeService.clearGrid();
     return this.currentAlgorithm;
