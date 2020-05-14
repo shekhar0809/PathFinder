@@ -1,6 +1,6 @@
 import { node } from 'src/app/mockGrid';
 
-export function dijkstra(data, startNode, endNode) {
+export function bfs(data, startNode, endNode) {
   if (!startNode) {
     alert('you need to have a start Node');
     return -1;
@@ -21,14 +21,14 @@ export function dijkstra(data, startNode, endNode) {
     visitedNodesInOrder.push(closestNode);
     if (closestNode === endNode) {
       // console.log(visitedNodesInOrder);
-      animateDijkstra(visitedNodesInOrder);
+      animateBFS(visitedNodesInOrder);
       break;
     }
     updateUnvisitedNeighbors(closestNode, data);
   }
 }
 
-function animateDijkstra(visitedNodesInOrder: node[]) {
+function animateBFS(visitedNodesInOrder: node[]) {
   console.log('animate');
   for (let i = 0; i < visitedNodesInOrder.length; i++) {
     setTimeout(() => {
