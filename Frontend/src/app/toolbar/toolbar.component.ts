@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NodeServiceService } from '../services/node-service.service';
 import { dijkstra } from 'src/assets/Algorithms/dijkstra';
+
 import { dda } from 'src/assets/Algorithms/dda';
 import { bfs } from 'src/assets/Algorithms/bfs';
 import { AlgorithmSupplierService } from '../services/algorithm-supplier.service';
+
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
@@ -37,6 +39,7 @@ export class ToolbarComponent implements OnInit {
 
   selectBFS() {
     this.algorithm.selectBFS();
+
   }
 
   selectDijsktra() {
