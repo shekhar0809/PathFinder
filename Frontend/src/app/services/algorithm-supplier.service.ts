@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { NodeServiceService } from './node-service.service';
 
 @Injectable({
   providedIn: 'root',
@@ -6,21 +7,25 @@ import { Injectable } from '@angular/core';
 export class AlgorithmSupplierService {
   currentAlgorithm: number = undefined;
 
-  constructor() {}
+  constructor(private nodeService: NodeServiceService) {}
 
   selectBFS() {
     this.currentAlgorithm = 1;
+    this.nodeService.clearGrid();
   }
 
-  selectDijsktra() {
+  selectDijkstra() {
     this.currentAlgorithm = 2;
+    this.nodeService.clearGrid();
   }
 
   selectDDA() {
     this.currentAlgorithm = 3;
+    this.nodeService.clearGrid();
   }
 
   getAlgorithm(): number {
+    this.nodeService.clearGrid();
     return this.currentAlgorithm;
   }
 }

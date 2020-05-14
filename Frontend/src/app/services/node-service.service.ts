@@ -25,7 +25,7 @@ export class NodeServiceService {
 
     e.isStart = true;
     this.startNode = e;
-    this.newGrid();
+    this.clearGrid();
   }
 
   end(e: node) {
@@ -33,7 +33,7 @@ export class NodeServiceService {
 
     e.isEnd = true;
     this.endNode = e;
-    this.newGrid();
+    this.clearGrid();
   }
 
   getGrid() {
@@ -52,7 +52,7 @@ export class NodeServiceService {
     return `Node-r${e.row}-c${e.col}`;
   }
 
-  newGrid() {
+  clearGrid() {
     const grid = this.grid;
     for (let row of grid) {
       for (let node of row) {

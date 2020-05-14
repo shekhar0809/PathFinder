@@ -14,8 +14,10 @@ import { AlgorithmSupplierService } from '../services/algorithm-supplier.service
 export class ToolbarComponent implements OnInit {
   constructor(
     private nodeService: NodeServiceService,
-    private algorithm: AlgorithmSupplierService
+    private algorithmService: AlgorithmSupplierService
   ) {}
+
+  Algorithm: string = 'Algorithm';
 
   runAlgorithm() {
     const grid = this.nodeService.getGrid();
@@ -23,8 +25,7 @@ export class ToolbarComponent implements OnInit {
     const endNode = this.nodeService.getEndNode();
     console.log(startNode);
     console.log(endNode);
-
-    const algorithmID = this.algorithm.getAlgorithm();
+    const algorithmID = this.algorithmService.getAlgorithm();
 
     if (algorithmID === 1) {
       bfs(grid, startNode, endNode);
@@ -38,16 +39,18 @@ export class ToolbarComponent implements OnInit {
   }
 
   selectBFS() {
-    this.algorithm.selectBFS();
-
+    this.Algorithm = 'BFS';
+    this.algorithmService.selectBFS();
   }
 
-  selectDijsktra() {
-    this.algorithm.selectDijsktra();
+  selectDijkstra() {
+    this.Algorithm = "Dijkstra's Algorithm";
+    this.algorithmService.selectDijkstra();
   }
 
   selectDDA() {
-    this.algorithm.selectDDA();
+    this.Algorithm = 'DDA Line Tracing Algorithm';
+    this.algorithmService.selectDDA();
   }
 
   clearBoard() {
