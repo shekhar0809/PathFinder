@@ -18,7 +18,7 @@
 }
 
 .change-color {
-  background-color: red !important ;
+  // background-color: yellow !important ;
 }
 
 .cell:hover {
@@ -38,4 +38,12 @@
 
 .visited {
   background-color: blue;
+}
+
+.start {
+  background-color: green !important ;
+}
+
+.finish {
+  background-color: red !important ;
 }

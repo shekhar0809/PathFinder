@@ -64,6 +64,8 @@ export class NodeServiceService {
   }
 
   resetGrid() {
+    this.startNode = undefined;
+    this.endNode = undefined;
     const grid = this.grid;
     for (let row of grid) {
       for (let node of row) {
